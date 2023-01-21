@@ -1,48 +1,57 @@
-## **AteltaAI Streamer SDK** 
+AtelaStream
+==============================
 
-Official repository for **AteltaAI** Streamer SDK. This repository helps to establish the two video streams 
-across different types of video sources. 
+A short description of the project.
 
-This repository will be shifted to **[CookieClutter-DataSc](https://github.com/drivendata/cookiecutter-data-science)** soon.
+Project Organization
+------------
 
-### **How to run the Project**
+    ├── LICENSE
+    ├── Makefile           <- Makefile with commands like `make data` or `make train`
+    ├── README.md          <- The top-level README for developers using this project.
+    ├── data
+    │   ├── external       <- Data from third party sources.
+    │   ├── interim        <- Intermediate data that has been transformed.
+    │   ├── processed      <- The final, canonical data sets for modeling.
+    │   └── raw            <- The original, immutable data dump.
+    │
+    ├── docs               <- A default Sphinx project; see sphinx-doc.org for details
+    │
+    ├── models             <- Trained and serialized models, model predictions, or model summaries
+    │
+    ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
+    │                         the creator's initials, and a short `-` delimited description, e.g.
+    │                         `1.0-jqp-initial-data-exploration`.
+    │
+    ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
+    │
+    ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
+    │   └── figures        <- Generated graphics and figures to be used in reporting
+    │
+    ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
+    │                         generated with `pip freeze > requirements.txt`
+    │
+    ├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported
+    ├── src                <- Source code for use in this project.
+    │   ├── __init__.py    <- Makes src a Python module
+    │   │
+    │   ├── data           <- Scripts to download or generate data
+    │   │   └── make_dataset.py
+    │   │
+    │   ├── features       <- Scripts to turn raw data into features for modeling
+    │   │   └── build_features.py
+    │   │
+    │   ├── models         <- Scripts to train models and then use trained models to make
+    │   │   │                 predictions
+    │   │   ├── predict_model.py
+    │   │   └── train_model.py
+    │   │
+    │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
+    │       └── visualize.py
+    │
+    └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
 
-First install the required dependencies on your virtual environment
 
-```bash 
+--------
 
-pip install -r requirements.txt
-```
-
-- Then for geting a video get processed, first download a video (For now the automatic download is not implemented). So download a video / or any existing video that contains any action. Lets assume the name of the video is `sample_video.mp4`. 
-
-
-- Save the video in `RawData/` folder.
-
-- In order to preprocess the video run the following command:
-
-```bash
-PYTHONPATH=. python3 python3 src/stream.py -s1 RawData/sample_video.mp4
-```
-- The above steps does all the required preprocessing. Which includes: 
-    - Generating the keypoints 
-    - Drawing the keypoints on the video 
-    - Saving the keypoints on a file 
-    And it creates a file structure something like this:
-    ```
-    .DATA/
-    └── sample_video
-        ├── sample_video_key_frames
-        ├── sample_video.mp4
-        └── sample_video_preprocessed.mp4
-    ```
-
-- In order to run the two video streams using that preprocessed video on the webcam, go to `two_video_stream.py` And run the following command:
-    ```bash 
-    PYTHONPATH=. python3 two_video_stream.py -s1 <The name of the video>
-    ```
-
-    Here it will be:
-    ```
-    PYTHONPATH=. python3 two_video_stream.py -s1 sample_video
-    ```
+<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
